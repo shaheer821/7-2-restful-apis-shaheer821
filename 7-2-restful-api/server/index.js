@@ -14,6 +14,8 @@ app.use(express.json());
 
 await connectDB(process.env.MONGO_URL);
 
+//MONGO_URL=mongodb+srv://s202282120_db_user:swelab@cluster0.prqxyuz.mongodb.net/labDB
+
 // api/songs (Read all songs)
 app.get("/api/songs", async (_req, res) => {
   const rows = await Song.find().sort({ createdAt: -1 });
